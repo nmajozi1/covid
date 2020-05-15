@@ -48,19 +48,28 @@
   </mat-tab-group> -->
 
   <div class="row">
-    <div class="col-sm-12" style="top: 60px; padding: 5px;">
+    <div class="col-sm-4" style="top: 60px; padding: 5px;">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Covid-19 SA</mat-card-title>
-          <mat-card-subtitle>Covid-19 SA Information overview</mat-card-subtitle>
+          <mat-card-title style="color: #FF8C00;">{{ totalInfections }}</mat-card-title>
+          <mat-card-subtitle>Number of covid infections in South Afrika</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
-          <div class="row">
-            <div class="col-sm-2"><strong> Number of infections:</strong><p style="color: red;">{{ totalInfections }}</p></div>
-            <!-- <div class="col-sm-2"><strong>Total number recovered:</strong><p style="color: green;">3983</p></div>
-            <div class="col-sm-2"><strong>Province with the most infections:</strong><p style="color: red;">WC</p></div> -->
-          </div>
-        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-sm-4" style="top: 60px; padding: 5px;">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title style="color: #228B22;">{{ totalRecovered }}</mat-card-title>
+          <mat-card-subtitle>Total number of people that have recovered in South Africa</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div class="col-sm-4" style="top: 60px; padding: 5px;">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title style="color: red;">{{ totalDeaths }}</mat-card-title>
+          <mat-card-subtitle>Number of covid related deaths in South Afrika</mat-card-subtitle>
+        </mat-card-header>
       </mat-card>
     </div>
     <div class="col-sm-6" style="top: 70px; padding: 5px;">
