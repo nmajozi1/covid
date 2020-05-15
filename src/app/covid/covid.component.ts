@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class CovidComponent implements OnInit {
 
   totalInfections: number;
+  cumulativeTotalInfections: number;
   totalTest: any;
   testedBy: any;
   totalDeaths: any;
@@ -25,6 +26,7 @@ export class CovidComponent implements OnInit {
       const latest = results.data.slice(Math.max(results.data.length) - 2);
       latest.pop();
 
+      this.cumulativeTotalInfections = +latest[0].total;
       this.totalInfections = +latest[0].total;
     });
 
