@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class CovidComponent implements OnInit {
 
-  totalInfections: any;
+  totalInfections: number;
   totalTest: any;
   testedBy: any;
   totalDeaths: any;
@@ -25,17 +25,14 @@ export class CovidComponent implements OnInit {
       const latest = results.data.slice(Math.max(results.data.length) - 2);
       latest.pop();
 
-      this.totalInfections = latest[0].total;
+      this.totalInfections = +latest[0].total;
     });
 
     this.genericService.fetchTestData().subscribe(results => {
       const testData = results.data.slice(Math.max(results.data.length) - 2);
       testData.pop();
 
-      console.log(testData);
-
-      console.log('Test Data: ', testData[0].cumulative_tests, ' || Date: ', testData[0].date);
-
+      this.totalInfections = this.totalInfections - +testData[0].recovered - +testData[0].deaths;
       this.totalTest = testData[0].cumulative_tests;
       this.testedBy = testData[0].date;
       this.totalDeaths = testData[0].deaths;
