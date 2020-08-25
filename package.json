@@ -25,7 +25,7 @@
     "angular-highcharts": "^9.0.9",
     "file-save": "^0.2.0",
     "file-saver": "^2.0.2",
-    "highcharts": "^8.1.0",
+    "highcharts": "^8.1.1",
     "ngx-csv-parser": "0.0.2",
     "papaparse": "^5.2.0",
     "rxjs": "^6.4.0",
